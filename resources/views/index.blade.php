@@ -89,5 +89,5 @@
     <meta property="og:title" content="Google DevFest 2023"/>
     <meta property="og:description" content="DevFest (Developers Festival) Mauritius is a single-day, multiple-track, inclusive conference for all developers using Google technology stack. It is an annual community-run event that offers keynote speakers who are very influential, speaker sessions across multiple product areas, including hackathons, codelabs, and more."/>
     <meta property="og:url" content="https://devfest.mscc.mu"/>
-    <meta property="og:image" content="https://devfest.mscc.mu/images/cover.png"/>
+    <meta property="og:image" content="https://devfest.mscc.mu/images/hero-2023.png"/>
 @endsection
