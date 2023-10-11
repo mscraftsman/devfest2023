@@ -1,7 +1,7 @@
 @extends('layout.main')
 @section('content')
 <div class="max-w-6xl mx-auto mt-4 md:mt-8 mb-10 px-4 lg:px-0">
-    <img src="/images/hero-2023.png" class="rounded-lg shadow-md mb-2 md:mb-8" />
+    <img src="/images/hero.jpeg" class="rounded-lg shadow-md mb-2 md:mb-8" />
     <h2 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4">About GDG Mauritius</h2>
     <div class="flex flex-col md:flex-row">
         <div class="md:mr-6 md:w-1/2">
