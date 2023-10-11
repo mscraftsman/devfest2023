@@ -6,12 +6,12 @@
     <div class="flex flex-col md:flex-row">
         <div class="md:mr-6 md:w-1/2">
             <p class="mb-2 md:mb-4 text-sm md:text-lg">Google Developer Groups (GDG) - is an open and volunteer geek community who create exciting projects and share their experience about Google technologies with a passion.</p>
-            <p class="mb-2 md:mb-4 text-sm md:text-lg">DevFest (Developers Festival) Mauritius is a single-day, two-track, inclusive conference for all developers. It is an annual community-run event that offers keynote speakers who are very influential, speaker sessions across multiple product areas, including hackathons, codelabs, and more.</p>
+            <p class="mb-2 md:mb-4 text-sm md:text-lg">DevFest (Developers Festival) Mauritius is a single-day, four-track, inclusive conference for all developers. It is an annual community-run event that offers keynote speakers who are very influential, speaker sessions across multiple product areas, including hackathons, codelabs, and more.</p>
             <p class="text-sm md:text-lg mb-4">Come and join us at the DevFest 2023! Let's get together and end this year on a Google note!</p>
         </div>
         <div class="mt-4 md:mt-0 md:ml-6 md:w-1/2 grid grid-cols-2">
             <div class="w-1/2 flex flex-col">
-                <span class="text-4xl md:text-6xl font-bold border-b-4 border-green-600">200</span>
+                <span class="text-4xl md:text-6xl font-bold border-b-4 border-green-600">300</span>
                 <span class="text-xl md:text-2xl">attendees</span>
             </div>
             <div class="w-1/2 flex flex-col">
@@ -19,11 +19,11 @@
                 <span class="text-xl md:text-2xl">day</span>
             </div>
             <div class="mt-2 md:mt-0 w-1/2 flex flex-col">
-                <span class="text-4xl md:text-6xl font-bold border-b-4 border-green-600">12</span>
+                <span class="text-4xl md:text-6xl font-bold border-b-4 border-green-600">20</span>
                 <span class="text-xl md:text-2xl">sessions</span>
             </div>
             <div class="mt-2 md:mt-0 w-1/2 flex flex-col">
-                <span class="text-4xl md:text-6xl font-bold border-b-4 border-green-600">2</span>
+                <span class="text-4xl md:text-6xl font-bold border-b-4 border-green-600">4</span>
                 <span class="text-xl md:text-2xl">tracks</span>
             </div>
         </div>
@@ -59,19 +59,19 @@
         <div class="flex flex-col lg:flex-row md:gap-4 items-center">
             <img class="h-12 md:mr-4 mt-10 md:mt-0" src="/images/Google.svg" />
             <img class="h-16" src="/images/liquid-intelligent-technologies.png" />
+            <img class="h-20" src="/images/ios.png" />
+            <img class="h-20" src="/images/uom.jpeg" />
+            <img class="h-10" src="/images/gdg-mauritius.jpeg" />
         </div>
     </div>
 
-    <div class="hidden md:block lg:hidden">
-        <div class="flex flex-row gap-4 items-center">
-            <img class="h-12 md:mx-4 mt-10 md:mt-0" src="/images/Google.svg" />
-            <img class="h-32" src="/images/novity.jpg" />
-            <img class="h-32" src="/images/sdworx.svg" />
-            <img class="h-12 md:ml-4 md:mr-6 mt-3 md:mt-0" src="/images/cloud-mu.svg" />
-        </div>
-        <div class="flex flex-row gap-4 items-center">
-
-            <img class="h-32 mt-3 md:mt-0" src="/images/ios.png" />
+    <div class="hidden">
+        <div class="flex flex-col lg:flex-row md:gap-4 items-center">
+            <img class="h-20" src="/images/gdsc-uom.jpeg" />
+            <img class="h-20" src="/images/gdsc-utm.jpeg" />
+            <img class="h-20" src="/images/gdsc-alc.jpeg" />
+            <img class="h-20" src="/images/gdsc-polytechnics-reduit.jpeg" />
+            <img class="h-20" src="/images/wtm.jpeg" />
         </div>
     </div>
 
