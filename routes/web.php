@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Collection;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,17 @@ Route::get('/', function () {
 });
 
 Route::get('/speakers', function () {
-    return view('speakers');
+    $speakersFromSessionize = file_get_contents(base_path('storage/database/speakers.json'));
+    $speakersToArray = json_decode($speakersFromSessionize, true);
+    $speakersToCollection = collect($speakersToArray)->map(function ($speaker) {
+        return [
+            'id' => $speaker['id'],
+            'fullName' => $speaker['fullName'],
+            'profilePicture' => $speaker['profilePicture'],
+            'tagLine' => $speaker['tagLine'],
+        ];
+    });
+    return view('speakers', ['speakers' => $speakersToCollection]);
 });
 
 Route::get('/speaker', function () {
