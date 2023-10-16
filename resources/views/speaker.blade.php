@@ -20,40 +20,40 @@
 				<li aria-current="page">
 				<div class="flex items-center">
 					<svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-					<span class="ml-1 text-sm font-medium text-gray-800 md:ml-2 dark:text-gray-400">Joomun</span>
+					<span class="ml-1 text-sm font-medium text-gray-800 md:ml-2 dark:text-gray-400">{{ $speakerBio['fullName'] }}</span>
 				</div>
 				</li>
 			</ol>
 		</nav>
 
 		<div class="speaker__container mt-10">
-			<img class="w-64 h-64 rounded-full mx-auto drop-shadow-xl" src="https://avatars.githubusercontent.com/u/128174208?v=4">
+			<img class="w-64 h-64 rounded-full mx-auto drop-shadow-xl" src="{{ $speakerBio['profilePicture'] }}">
 			<div class="pt-6 text-center space-y-3">
 				<figcaption class="font-large">
 					<div class="font-astronomus uppercase text-2xl font-bold text-slate-800 mb-1">
-						Joomun Muddathir
+                        {{ $speakerBio['fullName'] }}
 					</div>
 					<div class="font-dm text-md font-bold text-slate-500 max-w-2xl mx-auto">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        {{ $speakerBio['tagLine'] }}
 					</div>
 
 					<hr class="mt-5 px-20"/>
 					<div class="font-dm text-md font-regular leading-normal mt-5 text-slate-400">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, magnam dignissimos repellendus adipisci rerum minima magni necessitatibus pariatur deserunt harum odio saepe, impedit nesciunt consequatur ab laboriosam aliquid ipsa quia?
+                        {{ $speakerBio['bio'] }}
 					</div>
 
                     <!-- <div class="social--icons">
 
 						<a href="" target="_blank" class="icon">
-							
+
 							<img src="{{ asset('images/svg/twitter.svg') }}" alt="">
 
 							<img src="{{ asset('images/svg/meta.svg') }}" alt="">
-	
+
 							<img src="{{ asset('images/svg/instagram.svg') }}" alt="">
 
 							<img src="{{ asset('images/svg/linkedin.svg') }}" alt="">
-	
+
 							<img src="{{ asset('images/svg/website.svg') }}" alt="">
 
 							<img src="{{ asset('./public/images/svg/website.svg') }}" alt="">
