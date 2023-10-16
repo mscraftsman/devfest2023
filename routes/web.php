@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/speakers', function () {
     return view('speakers');
 });
+
+Route::get('/speaker', function () {
+    return view('speaker');
+});

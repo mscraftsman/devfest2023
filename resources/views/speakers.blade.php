@@ -15,7 +15,7 @@
 
     <section class="mt-10 pt-8 max-w-6xl px-3 mx-auto">
         <div class="grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-					<a href="" class="p-5 transition-all hover:scale-110 hover:bg-slate-100">
+					<a href="/speaker" class="p-5 transition-all hover:scale-110 hover:bg-slate-100">
 						<img class="w-28 h-28 rounded-full mx-auto drop-shadow-xl" src="https://avatars.githubusercontent.com/u/128174208?s=96&v=4">
 						<div class="pt-6 text-center space-y-3">
 							<figcaption class="font-medium">
