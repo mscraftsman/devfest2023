@@ -56,8 +56,6 @@
                     <div class="mt-4 pb-2 sm:pb-0 lg:mt-0 flex flex-col lg:flex-row gap-3 lg:gap-6 lg:items-center">
                         <a href="" class="text-black hover:text-mustard transition hover:ease-in-out duration-300" href="#">Agenda</a>
                         <a href="" class="text-black hover:text-mustard transition hover:ease-in-out duration-300" href="#">Speakers</a>
-                        <a class="text-black hover:text-mustard transition hover:ease-in-out duration-300" href="">Community</a>
-                        <a class="text-black hover:text-mustard transition hover:ease-in-out duration-300 hidden" href="#">Extras</a>
                         <a class=" bg-green-600 px-2 py-2 pt-3 px-4 hover:bg-green-700 transition hover:ease-in-out duration-500 rounded-sm leading-1" href="https://gdg.community.dev/events/details/google-gdg-mauritius-presents-devfest-mauritius-2023/" target="_blank">Register</a>
                     </div>
                 </div>
