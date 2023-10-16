@@ -49,7 +49,18 @@
 								</svg>
 						</span>
 			</button>
+
+            <div class="text-gray-100 text-md font-bold font-astronomus uppercase max-h-0 lg:max-h-full overflow-hidden transition-all" style="" x-ref="menu" x-bind:style="open == true ? 'max-height: ' + $refs.menu.scrollHeight + 'px' : ''">
+				<div class="mt-4 pb-2 sm:pb-0 lg:mt-0 flex flex-col lg:flex-row gap-3 lg:gap-6 lg:items-center">
+					<a href="" class=" hover:text-mustard transition hover:ease-in-out duration-300" href="#">Agenda</a>
+					<a href="" class=" hover:text-mustard transition hover:ease-in-out duration-300" href="#">Speakers</a>
+					<a class="hover:text-mustard transition hover:ease-in-out duration-300" href="">Community</a>
+					<a class="hover:text-mustard transition hover:ease-in-out duration-300 hidden" href="#">Extras</a>
+					<a class="bg-black-600 px-2 py-2 pt-3 px-4 hover:bg-red-700 transition hover:ease-in-out duration-500 rounded-sm leading-1" href="" target="_blank">Register</a>
+				</div>
+			</div>
             </div>
+
         </div>
     </nav>
 </header>
