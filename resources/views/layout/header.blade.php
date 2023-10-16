@@ -21,7 +21,7 @@
                     <li
                         class="py-2 border-b-4 border-white hover:border-b-4 hover:border-green-600 hover:transition hover:ease-in-out duration-300"
                     >
-                        <a href="/#" class="uppercase">Speakers</a>
+                        <a href="/speakers" class="uppercase">Speakers</a>
                     </li>
 
                     <li
