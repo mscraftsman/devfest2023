@@ -24,3 +24,7 @@ Route::get('/speakers', function () {
 Route::get('/speaker', function () {
     return view('speaker');
 });
+
+Route::get('/agenda', function () {
+    return view('agenda');
+});
