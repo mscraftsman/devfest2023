@@ -36,31 +36,29 @@
 					<div class="font-dm text-md font-bold text-slate-500 max-w-2xl mx-auto">
                         {{ $speakerBio['tagLine'] }}
 					</div>
+                    
+                    <section class="mt-5 flex justify-center">
+                        <div class="icon flex items-center">
+                            <a href="#" target="_blank" class="rounded-full p-1 bg-green-500 mr-4">
+                                <img src="{{ asset('images/svg/instagram.svg') }}" alt="Instagram" class="w-10 h-10">
+                            </a>
+                            <a href="#" target="_blank" class="rounded-full p-1 bg-green-500 mr-4">
+                                <img src="{{ asset('images/svg/linkedin.svg') }}" alt="LinkedIn" class="w-10 h-10">
+                            </a>
+                            <a href="#" target="_blank" class="rounded-full p-1 bg-green-500">
+                                <img src="{{ asset('images/svg/twitter.svg') }}" alt="Twitter" class="w-10 h-10">
+                            </a>
+                        </div>
+                    </section>
+
+
 
 					<hr class="mt-5 px-20"/>
 					<div class="font-dm text-md font-regular leading-normal mt-5 text-slate-400">
                         {{ $speakerBio['bio'] }}
 					</div>
 
-                    <!-- <div class="social--icons">
 
-						<a href="" target="_blank" class="icon">
-
-							<img src="{{ asset('images/svg/twitter.svg') }}" alt="">
-
-							<img src="{{ asset('images/svg/meta.svg') }}" alt="">
-
-							<img src="{{ asset('images/svg/instagram.svg') }}" alt="">
-
-							<img src="{{ asset('images/svg/linkedin.svg') }}" alt="">
-
-							<img src="{{ asset('images/svg/website.svg') }}" alt="">
-
-							<img src="{{ asset('./public/images/svg/website.svg') }}" alt="">
-
-						</a>
-
-					</div> -->
 				</figcaption>
 			</div>
 		</div>
