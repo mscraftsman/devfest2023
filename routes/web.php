@@ -37,5 +37,7 @@ Route::get('/speaker', function () {
 });
 
 Route::get('/agenda', function () {
-    return view('agenda');
+    $agendaData = file_get_contents(base_path('storage/database/agenda.json'));
+    $agenda = json_decode($agendaData, true);
+    return view('agenda', ['agenda' => collect($agenda)]);
 });

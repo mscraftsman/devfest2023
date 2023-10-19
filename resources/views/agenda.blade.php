@@ -1,80 +1,41 @@
 @extends('layout.main')
 @section('content')
-<div class="page--agenda">
-    <section class="pt-20 pb-10 max-w-4xl px-3 mb-7 mx-auto ">
-        <div class="flex justify-center">
-            <span class="text-center uppercase text-4xl md:text-6xl font-bold border-b-4 border-green-600">Agenda</span>
-        </div>
-        <br>
-        <div class="flex justify-center">
-            <p class="text-center text-slate-400 font-dm max-w-3xl text-sm sm:text-lg">Join us for a transformative experience as our distinguished speakers, industry pioneers, and thought leaders converge to illuminate the latest frontiers of technology</p>
-        </div>
-    </section>
+    <div class="px-4 lg:px-0 mt-3 lg:mt-12 mb-10 max-w-6xl mx-auto">
+        @foreach($agenda as $a)
+            <div class="flex flex-col lg:flex-row justify-between gap-4 lg:gap-6">
+                @foreach($a['rooms'] as $room)
 
-    <section class="mt-10 max-w-7xl px-2 mx-auto flex">
-        <div class="sessions__column">
-            <div class="tracks__container grid grid-cols-4 gap-2 mb-10 ml-20 h-12" id="rooms-bar">
-                <div class="track__title text-center bg-purple text-black py-4 uppercase font-bold rounded-md">
-                    Room #1
-                </div>
-                <div class="track__title text-center bg-purple text-black py-4 uppercase font-bold rounded-md">
-                    Room #2
-                </div>
-                <div class="track__title text-center bg-purple text-black py-4 uppercase font-bold rounded-md">
-                    Room #3
-                </div>
-                <div class="track__title text-center bg-purple text-black py-4 uppercase font-bold rounded-md">
-                    Room #4
-                </div>
-            </div>
-            <div class="day--agenda" id="agenda">
-                <div class="track__session" style="grid-template-areas: {{ generateGridTemplateAreas($cellIds) }}">
-                    @foreach($time_range as $time)
-                    <div 
-                        class="time__track"
-                        style="grid-area: {{ calculateTimePlacement($time) }}"
-                    ><span class="time__tag px-2 py-2 bg-mustard font-bold center rounded-md inline-flex">
-                        {{$time}}
-                        </span>
-                        <div class="line"></div>
-                    </div>
-                    @endforeach
-                
-                    @foreach($groupedSessions as $key => $value)
-                    @if($key == 'Thursday')
-                        @foreach($value as $key => $session)
-                        <a
-                            class="session__wrapper px-4 py-3 rounded-md bg-slate-100 block mb-3 hover:bg-slate-200 hover:drop-shadow-md transition-all hover:scale-105" 
-                            style="grid-row: {{ calculatePlacementGridRow($session, $time_range) }}; grid-column: {{ calculatePlacementGridColumn($session, $roomNames) }}"
-                            data-room="{{ $session['room'] }}"
-                            href="/agenda/{{ $session['id'] }}"
-                            >
-                            <div class="tile_start text-sm text-slate-500 mb-1 font-medium">
-                            {{convertDateTimeToTime($session['startsAt'])}} - {{convertDateTimeToTime($session['endsAt'])}}
+                        <div>
+                            <h3 class="py-4 text-xl font-bold text-green-600">
+                                @if ( $room['name']  == 'Lecture Theatre 1' || $room['name']  == 'Lecture Theatre 2')
+                                    <span class="text-2xl font-bold text-green-600">{{ $room['name'] }}</span>
+                                @else
+                                    <span class="text-2xl font-bold text-green-600">Room {{ $room['name'] }}</span>
+                                @endif
+                            </h3>
+
+                            <div class="space-y-6">
+                                @foreach($room['sessions'] as $session)
+                                    <div class="p-2 bg-gray-100 rounded-md">
+                                        <p class="text-lg font-bold text-gray-700">{{ $session['title'] }}</p>
+                                        <p class="mt-1 text-md font-semibold text-gray-600">{{ date('H:i', strtotime($session['startsAt'])) }} - {{ date('H:i', strtotime($session['endsAt'])) }}</p>
+                                        @if(isset($session['speakers'][0]))
+                                            <p class="font-bold text-gray-700"><span class="font-semibold">By</span> {{ $session['speakers'][0]['name'] }}</p>
+                                        @endif
+                                    </div>
+                                @endforeach
                             </div>
-                            <h3 class="font-bold text-md mb-2 text-purple ">{{ $session['title'] }}</h3>
-                            <div class="speaker text-sm mt-2">
-                            @foreach($session['speakers'] as $key => $speaker)
-                                <div class="speaker--headshot flex items-center mb-1">
-                                <img src="{{ getSpeaker($speaker['id'])['profilePicture'] }}" class="w-8 h-8 rounded-full mr-2" alt="{{$speaker['name']}}">
-                                <div href="/speaker/{{ $speaker['id'] }}">{{ $speaker['name'] }}</div>
-                                </div>
-                            @endforeach
-                            </div>
-                        </a>
-                        @endforeach
-                    @endif
-                    @endforeach
-                </div>
+
+                        </div>
+
+                @endforeach
             </div>
-        </div>
-    </section>
-    
-  </div>
+        @endforeach
+    </div>
 @endsection
 
 @section('html-title')
-    <title>{{ config('app.name', 'Google DevFest 2023') }}</title>
+    <title>Agenda | Google DevFest 2023</title>
 @endsection
 
 @section('meta-tags')
