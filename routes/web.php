@@ -32,15 +32,6 @@ Route::get('/speakers', function () {
     return view('speakers', ['speakers' => $speakersToCollection]);
 });
 
-
-Route::get('/speaker', function () {
-    return view('speaker');
-});
-
-Route::get('/agenda', function () {
-    return view('agenda');
-});
-
 Route::get('/speaker/{id}', function ($id) {
     $speakersFromSessionize = file_get_contents(base_path('storage/database/speakers.json'));
     $speakersToArray = json_decode($speakersFromSessionize, true);
