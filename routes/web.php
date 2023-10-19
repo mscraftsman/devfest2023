@@ -20,16 +20,8 @@ Route::get('/', function () {
 
 Route::get('/speakers', function () {
     $speakersFromSessionize = file_get_contents(base_path('storage/database/speakers.json'));
-    $speakersToArray = json_decode($speakersFromSessionize, true);
-    $speakersToCollection = collect($speakersToArray)->map(function ($speaker) {
-        return [
-            'id' => $speaker['id'],
-            'fullName' => $speaker['fullName'],
-            'profilePicture' => $speaker['profilePicture'],
-            'tagLine' => $speaker['tagLine'],
-        ];
-    });
-    return view('speakers', ['speakers' => $speakersToCollection]);
+    $speakers = json_decode($speakersFromSessionize, true);
+    return view('speakers', ['speakers' => collect($speakers)]);
 });
 
 
@@ -48,12 +40,7 @@ Route::get('/speaker/{id}', function ($id) {
     if (!$foundSpeaker) {
         abort(404, 'Speaker not found');
     }
-    $speakerBio = collect([
-        'fullName' => $foundSpeaker['fullName'],
-        'profilePicture' => $foundSpeaker['profilePicture'],
-        'tagLine' => $foundSpeaker['tagLine'],
-        'bio' => $foundSpeaker['bio'],
-    ]);
-    return view('speaker', ['speakerBio' => $speakerBio]);
+   
+    return view('speaker', ['speakerBio' => collect($foundSpeaker)]);
 });
 
