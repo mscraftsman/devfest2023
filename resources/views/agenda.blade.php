@@ -4,7 +4,6 @@
         @foreach($agenda as $a)
             <div class="flex flex-col lg:flex-row justify-between gap-4 lg:gap-6">
                 @foreach($a['rooms'] as $room)
-
                         <div>
                             <h3 class="py-4 text-xl font-bold text-green-600">
                                 @if ( $room['name']  == 'Lecture Theatre 1' || $room['name']  == 'Lecture Theatre 2')
@@ -16,12 +15,21 @@
 
                             <div class="space-y-6">
                                 @foreach($room['sessions'] as $session)
-                                    <div class="p-2 bg-gray-100 rounded-md">
-                                        <p class="text-lg font-bold text-gray-700">{{ $session['title'] }}</p>
-                                        <p class="mt-1 text-md font-semibold text-gray-600">{{ date('H:i', strtotime($session['startsAt'])) }} - {{ date('H:i', strtotime($session['endsAt'])) }}</p>
-                                        @if(isset($session['speakers'][0]))
-                                            <p class="font-bold text-gray-700"><span class="font-semibold">By</span> {{ $session['speakers'][0]['name'] }}</p>
-                                        @endif
+                                    @if ($room['name']  != 'Lecture Theatre 1')
+                                    <div class="lg:mt-[225px] relative p-2">
+                                    @else
+                                    <div class="relative p-2">
+                                    @endif
+                                        <div class="absolute top-0 left-0 w-full h-full p-2 bg-green-500 rounded-md transform -rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
+                                        <div class="absolute top-0 left-0 w-full h-full p-2 bg-indigo-500 rounded-md transform rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
+
+                                        <div class="p-2 rounded-md md:bg-gray-100 lg:bg-white">
+                                            <p class="text-lg font-bold text-gray-700">{{ $session['title'] }}</p>
+                                            <p class="mt-1 text-md font-semibold text-gray-600">{{ date('H:i', strtotime($session['startsAt'])) }} - {{ date('H:i', strtotime($session['endsAt'])) }}</p>
+                                            @if(isset($session['speakers'][0]))
+                                                <p class="font-bold text-gray-700"><span class="font-semibold">By</span> {{ $session['speakers'][0]['name'] }}</p>
+                                            @endif
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
