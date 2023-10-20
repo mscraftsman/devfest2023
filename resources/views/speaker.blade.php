@@ -66,7 +66,6 @@
 									@break
 
 							@endswitch
-
 							</a>
 						@endforeach
 
