@@ -57,8 +57,12 @@
 								@case('LinkedIn')
 									<img src="{{ asset('images/svg/linkedin.svg') }}" alt="LinkedIn" class="w-4 h-4">
 									@break
+								@case('Blog')
 								@case('Company Website')
-									<img src="{{ asset('images/svg/website.svg') }}" alt="Website" class="w-4 h-4">
+									<img src="{{ asset('images/svg/website.svg') }}" alt="Blog/Website" class="w-4 h-4">
+									@break
+								@default
+									<img src="{{ asset('images/svg/website.svg') }}" alt="Link" class="w-4 h-4">
 									@break
 
 							@endswitch
