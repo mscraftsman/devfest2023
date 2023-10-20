@@ -38,22 +38,23 @@
 					</div>
                     
 					@if ($speakerBio['links'])
-					<section class="mt-5 flex justify-center">
+					<section class="mt-5 flex justify-center " >
 						@foreach ($speakerBio['links'] as $link)
-							<a href="{{ $link['url'] }}" target="_blank" class="icon">
+							<a href="{{ $link['url'] }}" target="_blank" class="m-2 inline-block bg-green-600 rounded-full p-2 transition-transform duration-200 transform hover:bg-green-500 hover:scale-110">
 								@if ($link['title'] == 'Twitter')
-									<img src="{{ asset('images/svg/twitter.svg') }}" alt="">
+									<img src="{{ asset('images/svg/twitter.svg') }}" alt="Twitter" class="w-4 h-4">
 								@elseif ($link['title'] == 'Facebook')
-									<img src="{{ asset('images/svg/meta.svg') }}" alt="">
+									<img src="{{ asset('images/svg/meta.svg') }}" alt="Facebook" class="w-4 h-4">
 								@elseif ($link['title'] == 'Instagram')
-									<img src="{{ asset('images/svg/instagram.svg') }}" alt="">
+									<img src="{{ asset('images/svg/instagram.svg') }}" alt="Instagram" class="w-4 h-4">
 								@elseif ($link['title'] == 'LinkedIn')
-									<img src="{{ asset('images/svg/linkedin.svg') }}" alt="">
+									<img src="{{ asset('images/svg/linkedin.svg') }}" alt="LinkedIn" class="w-4 h-4">
 								@elseif ($link['title'] == 'Blog' || $link['title'] == 'Company Website')
-									<img src="{{ asset('images/svg/website.svg') }}" alt="">
+									<img src="{{ asset('images/svg/website.svg') }}" alt="Website" class="w-4 h-4">
 								@endif
 							</a>
 						@endforeach
+
 					</section>
 					@endif
 
