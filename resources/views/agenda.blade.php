@@ -5,7 +5,7 @@
             <div class="flex flex-col lg:flex-row justify-between gap-4 lg:gap-6">
                 @foreach($a['rooms'] as $room)
                         <div>
-                            <h3 class="py-4 text-xl font-bold text-green-600">
+                            <h3 class="py-4 text-xl font-bold text-green-600 text-center lg:text-left">
                                 @if ( $room['name']  == 'Lecture Theatre 1' || $room['name']  == 'Lecture Theatre 2')
                                     <span class="text-2xl font-bold text-green-600">{{ $room['name'] }}</span>
                                 @else
