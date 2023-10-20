@@ -24,15 +24,6 @@ Route::get('/speakers', function () {
     return view('speakers', ['speakers' => collect($speakers)]);
 });
 
-
-Route::get('/speaker', function () {
-    return view('speaker');
-});
-
-Route::get('/agenda', function () {
-    return view('agenda');
-});
-
 Route::get('/speaker/{id}', function ($id) {
     $speakersFromSessionize = file_get_contents(base_path('storage/database/speakers.json'));
     $speakersToArray = json_decode($speakersFromSessionize, true);
@@ -44,3 +35,8 @@ Route::get('/speaker/{id}', function ($id) {
     return view('speaker', ['speakerBio' => collect($foundSpeaker)]);
 });
 
+Route::get('/agenda', function () {
+    $agendaData = file_get_contents(base_path('storage/database/agenda.json'));
+    $agenda = json_decode($agendaData, true);
+    return view('agenda', ['agenda' => collect($agenda)]);
+});
