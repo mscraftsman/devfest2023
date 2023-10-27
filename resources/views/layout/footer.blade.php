@@ -58,21 +58,21 @@
             <div class="flex flex-col gap-1 text-gray-500">
                 <h3 class="mb-2 text-xl text-gray-600 font-bold">Event Resources</h3>
                 <a
-                    href="https://docs.google.com/presentation/d/1vyrgK43NUdWNe8A_sYwuJOwD-gBvLxyIvxIVrhNdxpA/edit?usp=sharing"
+                    href="https://drive.google.com/file/d/1f9xgEIVyzAZjLk1n0uMIC8YATvWeBatd/view?usp=drive_link"
                     target="_blank"
                     rel="noreferrer"
                     class="text-sm"
                 >Partnership Proposition</a
                 >
                 <a
-                    href="https://sessionize.com/google-devfest-2022-mauritius/"
+                    href="https://sessionize.com/google-devfest-2023-mauritius/"
                     target="_blank"
                     rel="noreferrer"
                     class="text-sm"
                 >Call for Papers</a
                 >
                 <a
-                    href="https://docs.google.com/presentation/d/1LBo5xogj1FZOhpECjU1pxPOvCgTKVT7mUP8ngV95Xgg/edit?usp=sharing"
+                    href="https://docs.google.com/presentation/d/1HCzPFNIza9zPJfeHIPcmQKZLRtm65YrYeZ_3u6G3bG0/edit?usp=sharing"
                     target="_blank"
                     rel="noreferrer"
                     class="text-sm"
