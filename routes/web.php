@@ -31,7 +31,7 @@ Route::get('/speaker/{id}', function ($id) {
     if (!$foundSpeaker) {
         abort(404, 'Speaker not found');
     }
-   
+
     return view('speaker', ['speakerBio' => collect($foundSpeaker)]);
 });
 
@@ -39,4 +39,8 @@ Route::get('/agenda', function () {
     $agendaData = file_get_contents(base_path('storage/database/agenda.json'));
     $agenda = json_decode($agendaData, true);
     return view('agenda', ['agenda' => collect($agenda)]);
+});
+
+Route::get('/location', function () {
+    return view('location');
 });
