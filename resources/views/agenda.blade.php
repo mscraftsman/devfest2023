@@ -10,12 +10,23 @@
                             </h3>
 
                             <div class="space-y-6">
-                                @foreach($room['sessions'] as $session)
-                                    @if ($room['name']  != 'Lecture Theatre 1')
-                                    <div class="lg:mt-[225px] relative p-2">
-                                    @else
-                                    <div class="relative p-2">
+                                @foreach($room['sessions'] as $index => $session)
+                                 
+                                    @if ($room['name']  != 'Lecture Theatre 1' && $index == 0  )
+                                        <div class="relative p-2 lg:h-[200px]">
+                                        <div class="absolute top-0 left-0 w-full h-full p-2 bg-green-500 rounded-md transform -rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
+                                        <div class="absolute top-0 left-0 w-full h-full p-2 bg-indigo-500 rounded-md transform rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
+                                        <div class="p-2 rounded-md md:bg-gray-100 lg:bg-white">
+                                            <p class="text-lg font-bold text-gray-700">Sessions will start after Opening Ceremony</p>
+                                            <p class="mt-1 text-md font-semibold text-gray-600">08:30 - {{ date('H:i', strtotime($session['startsAt'])) }}</p>   
+                                        </div>
+                                        </div>
                                     @endif
+                                        @if ($room['name'] == 'Lecture Theatre 1' && $index == 8)
+                                        <div class="relative p-2 lg:h-[210px]">
+                                        @else
+                                        <div class="relative p-2">
+                                        @endif
                                         <div class="absolute top-0 left-0 w-full h-full p-2 bg-green-500 rounded-md transform -rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
                                         <div class="absolute top-0 left-0 w-full h-full p-2 bg-indigo-500 rounded-md transform rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
 
@@ -26,7 +37,23 @@
                                                 <p class="font-bold text-gray-700"><span class="font-semibold">By</span> {{ $session['speakers'][0]['name'] }}</p>
                                             @endif
                                         </div>
-                                    </div>
+                                        </div>
+                                    @if (($room['name'] != 'Lecture Theatre 1' && $room['name'] != 'Room G6' && $index == 5) || ($room['name'] == 'Room G6' && $index == 4))
+                                        @if ($room['name'] == 'Room G1')
+                                        <div class="relative p-2 lg:h-[120px]">
+                                        @elseif ($room['name'] == 'Room G2')
+                                        <div class="relative p-2 lg:h-[260px]">
+                                        @elseif ($room['name'] == 'Room G6')
+                                        <div class="relative p-2 lg:h-[320px]">
+                                        @endif
+                                        <div class="absolute top-0 left-0 w-full h-full p-2 bg-green-500 rounded-md transform -rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
+                                        <div class="absolute top-0 left-0 w-full h-full p-2 bg-indigo-500 rounded-md transform rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
+                                        <div class="p-2 rounded-md md:bg-gray-100 lg:bg-white">
+                                            <p class="text-lg font-bold text-gray-700">Redirect to Lecture Theatre 1 for Closing Ceremony</p>
+                                            <p class="mt-1 text-md font-semibold text-gray-600">{{ date('H:i', strtotime($session['endsAt'])) }} - 16:00</p>   
+                                        </div>
+                                        </div>
+                                    @endif
                                 @endforeach
                             </div>
 
