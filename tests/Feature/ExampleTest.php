@@ -16,4 +16,12 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_agenda_speakers_and_location_pages_load(): void
+    {
+        $this->get('/agenda')->assertStatus(200);
+        $this->get('/speakers')->assertStatus(200);
+        $this->get('/location')->assertStatus(200);
+        $this->get('/speaker/unknown-id')->assertStatus(404);
+    }
 }
