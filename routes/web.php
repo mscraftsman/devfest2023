@@ -19,14 +19,18 @@ Route::get('/', function () {
 });
 
 Route::get('/speakers', function () {
-    $speakersFromSessionize = file_get_contents(base_path('storage/database/speakers.json'));
-    $speakers = json_decode($speakersFromSessionize, true);
+    $speakersPath = base_path('storage/database/speakers.json');
+    $speakers = is_file($speakersPath)
+        ? (json_decode(file_get_contents($speakersPath), true) ?? [])
+        : [];
     return view('speakers', ['speakers' => collect($speakers)]);
 });
 
 Route::get('/speaker/{id}', function ($id) {
-    $speakersFromSessionize = file_get_contents(base_path('storage/database/speakers.json'));
-    $speakersToArray = json_decode($speakersFromSessionize, true);
+    $speakersPath = base_path('storage/database/speakers.json');
+    $speakersToArray = is_file($speakersPath)
+        ? (json_decode(file_get_contents($speakersPath), true) ?? [])
+        : [];
     $foundSpeaker = collect($speakersToArray)->firstWhere('id', $id);
     if (!$foundSpeaker) {
         abort(404, 'Speaker not found');
@@ -36,8 +40,10 @@ Route::get('/speaker/{id}', function ($id) {
 });
 
 Route::get('/agenda', function () {
-    $agendaData = file_get_contents(base_path('storage/database/agenda.json'));
-    $agenda = json_decode($agendaData, true);
+    $agendaPath = base_path('storage/database/agenda.json');
+    $agenda = is_file($agendaPath)
+        ? (json_decode(file_get_contents($agendaPath), true) ?? [])
+        : [];
     return view('agenda', ['agenda' => collect($agenda)]);
 });
 

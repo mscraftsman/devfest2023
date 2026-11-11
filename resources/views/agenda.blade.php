@@ -39,12 +39,14 @@
                                         </div>
                                         </div>
                                     @if (($room['name'] != 'Lecture Theatre 1' && $room['name'] != 'Room G6' && $index == 5) || ($room['name'] == 'Room G6' && $index == 4))
-                                        @if ($room['name'] == 'Room G1')
+                                        @if ($room['name'] == 'Room G1' || $room['name'] == 'Room G3')
                                         <div class="relative p-2 lg:h-[120px]">
                                         @elseif ($room['name'] == 'Room G2')
                                         <div class="relative p-2 lg:h-[260px]">
                                         @elseif ($room['name'] == 'Room G6')
                                         <div class="relative p-2 lg:h-[320px]">
+                                        @else
+                                        <div class="relative p-2">
                                         @endif
                                         <div class="absolute top-0 left-0 w-full h-full p-2 bg-green-500 rounded-md transform -rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
                                         <div class="absolute top-0 left-0 w-full h-full p-2 bg-indigo-500 rounded-md transform rotate-2 z-0 opacity-10 md:hidden lg:block"></div>
